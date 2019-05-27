@@ -1,11 +1,16 @@
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 <script>
 var l = navigator.language || navigator.userLanguage; 
 
-document.body.innerHTML += '<div>'+l+'</div>';
+  $.get("https://ipinfo.io", function(response) {
+    document.body.innerHTML += '<div>'+JSON.parse(response).country+'</div>';
+}, "jsonp");
+  
+
 </script>
 </body>
 </html>
