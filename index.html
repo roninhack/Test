@@ -6,9 +6,10 @@
 <script>
 var l = navigator.language || navigator.userLanguage; 
 
-  $.get("https://ipinfo.io", function(response) {
+  $.get("https://ipapi.co/json/", function(response) {
     document.body.innerHTML += '<div>'+JSON.parse(response).country+'</div>';
 }, "jsonp");
+  
   
 
 </script>
